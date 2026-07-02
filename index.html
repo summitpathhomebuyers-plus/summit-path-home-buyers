@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summit Path Home Buyers — We Buy Houses in Northern Colorado</title>
+<meta name="description" content="Sell your Northern Colorado home fast. No repairs, no fees, no hassle. Cash offer in 24 hours. Serving Fort Collins, Greeley, Loveland and surrounding areas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pine:#1B3F2C;--pine-mid:#2A5C40;--pine-light:#3A7A56;
+  --cream:#F2EEE5;--cream-dark:#E8E3D8;--gold:#C4873A;--gold-light:#DFA55A;
+  --slate:#4A5568;--ink:#1A2420;--muted:#7A8B84;--white:#FFFFFF;--rule:#D8D3C8;
+  --f-display:'Playfair Display',Georgia,serif;--f-body:'Inter',system-ui,sans-serif;--f-mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(27,63,44,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:58px}
+.nav-logo{font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:var(--white);letter-spacing:.01em;line-height:1.2}
+.nav-logo span{display:block;font-family:var(--f-mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:400;margin-top:1px}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{font-family:var(--f-mono);font-size:.82rem;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.04em}
+.nav-phone:hover{color:var(--white)}
+.nav-cta{background:var(--gold);color:var(--white);border:none;border-radius:4px;padding:8px 16px;font-family:var(--f-body);font-weight:600;font-size:.82rem;cursor:pointer;text-decoration:none;transition:background .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--gold-light)}
+@media(max-width:560px){.nav-phone{display:none}}
+.hero{min-height:100vh;background-color:var(--pine);position:relative;display:flex;align-items:center;padding:100px 5% 60px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(175deg,transparent,transparent 38px,rgba(255,255,255,.028) 38px,rgba(255,255,255,.028) 39px),repeating-linear-gradient(88deg,transparent,transparent 54px,rgba(255,255,255,.018) 54px,rgba(255,255,255,.018) 55px);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,135,58,.18) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:40px}}
+.hero-eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold);opacity:.6}
+.hero h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--white);line-height:1.1;letter-spacing:-.02em;margin-bottom:22px}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.55)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:36px;font-weight:300;max-width:420px}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px}
+.trust-pill{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 14px;font-size:.75rem;color:rgba(255,255,255,.7)}
+.trust-pill .check{color:var(--gold);font-size:.7rem}
+.hero-form-card{background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.35),0 2px 8px rgba(0,0,0,.12)}
+.hfc-header{background:var(--gold);padding:18px 24px;text-align:center}
+.hfc-header p{font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:var(--white);line-height:1.3}
+.hfc-header span{display:block;font-family:var(--f-body);font-size:.75rem;font-weight:400;color:rgba(255,255,255,.8);margin-top:3px}
+.hfc-body{padding:24px}
+.hfc-step{display:none}.hfc-step.active{display:block}
+.hfc-progress{display:flex;gap:6px;margin-bottom:20px}
+.hfc-dot{flex:1;height:3px;border-radius:2px;background:var(--cream-dark);transition:background .3s}
+.hfc-dot.done{background:var(--gold)}.hfc-dot.active{background:var(--pine)}
+.f-label{display:block;font-size:.74rem;font-weight:600;color:var(--slate);margin-bottom:5px;letter-spacing:.02em}
+.f-group{margin-bottom:13px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.f-input{width:100%;border:1.5px solid var(--rule);border-radius:5px;padding:10px 13px;font-family:var(--f-body);font-size:.88rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color .15s,background .15s;appearance:none}
+.f-input:focus{border-color:var(--pine);background:var(--white)}
+.f-opts{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.f-opt{border:1.5px solid var(--rule);border-radius:6px;padding:10px 8px;text-align:center;cursor:pointer;transition:all .15s;background:var(--cream)}
+.f-opt:hover{border-color:var(--pine-light)}.f-opt.sel{border-color:var(--pine);background:rgba(27,63,44,.06)}
+.f-opt input{display:none}
+.f-opt-icon{font-size:1.2rem;display:block;margin-bottom:3px}
+.f-opt-label{font-size:.72rem;font-weight:500;color:var(--ink);line-height:1.2}
+.btn-next-hfc{width:100%;background:var(--pine);color:var(--white);border:none;border-radius:6px;padding:13px;font-family:var(--f-body);font-weight:600;font-size:.9rem;cursor:pointer;transition:background .15s;margin-top:4px}
+.btn-next-hfc:hover{background:var(--pine-mid)}
+.btn-back-hfc{width:100%;background:none;border:none;color:var(--muted);font-size:.78rem;cursor:pointer;margin-top:8px;text-decoration:underline;font-family:var(--f-body)}
+.hfc-success{display:none;padding:32px 24px;text-align:center}
+.hfc-success .s-icon{width:56px;height:56px;background:rgba(27,63,44,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 16px}
+.hfc-success h3{font-family:var(--f-display);font-weight:700;font-size:1.2rem;color:var(--ink);margin-bottom:8px}
+.hfc-success p{font-size:.82rem;color:var(--muted);line-height:1.6}
+.proof-strip{background:var(--pine-mid);padding:22px 5%}
+.proof-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.proof-stat{text-align:center}
+.proof-stat .p-num{font-family:var(--f-display);font-weight:800;font-size:1.6rem;color:var(--white);line-height:1}
+.proof-stat .p-label{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:3px}
+.proof-divider{width:1px;height:36px;background:rgba(255,255,255,.15)}
+@media(max-width:560px){.proof-divider{display:none}}
+.section{padding:88px 5%}.section-inner{max-width:1140px;margin:0 auto}.section-alt{background:var(--white)}
+.section-eyebrow{font-family:var(--f-mono);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section-title{font-family:var(--f-display);font-weight:800;font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-bottom:16px;max-width:600px}
+.section-sub{font-size:.95rem;color:var(--muted);line-height:1.7;max-width:520px;margin-bottom:52px;font-weight:300}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
+@media(max-width:720px){.steps{grid-template-columns:1fr;gap:28px}}
+.steps::before{content:'';position:absolute;top:28px;left:calc(16.66% + 14px);right:calc(16.66% + 14px);height:1px;background:var(--rule)}
+@media(max-width:720px){.steps::before{display:none}}
+.step-card{position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--rule);background:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:var(--pine);margin-bottom:20px;position:relative;z-index:1}
+.step-card h3{font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:10px}
+.step-card p{font-size:.88rem;color:var(--muted);line-height:1.7}
+.step-tag{display:inline-block;margin-top:12px;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(196,135,58,.1);border-radius:3px;padding:3px 9px}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+.why-card{border:1px solid var(--rule);border-radius:8px;padding:26px;background:var(--cream);transition:border-color .15s}
+.why-card:hover{border-color:#bbb}
+.why-icon{font-size:1.6rem;margin-bottom:14px}
+.why-card h3{font-family:var(--f-display);font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:8px}
+.why-card p{font-size:.84rem;color:var(--muted);line-height:1.7}
+.situations{display:flex;flex-wrap:wrap;gap:10px}
+.sit-tag{border:1.5px solid var(--rule);border-radius:100px;padding:9px 20px;font-size:.82rem;color:var(--slate);background:var(--white);cursor:default;transition:all .15s}
+.sit-tag:hover{border-color:var(--pine);color:var(--pine);background:rgba(27,63,44,.04)}
+.testimonial-block{background:var(--pine);border-radius:10px;padding:40px 44px;position:relative;overflow:hidden}
+.testimonial-block::before{content:'\201C';position:absolute;top:-20px;left:24px;font-family:var(--f-display);font-size:10rem;color:rgba(255,255,255,.06);line-height:1;pointer-events:none}
+.testimonial-block blockquote{font-family:var(--f-display);font-style:italic;font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--white);line-height:1.6;margin-bottom:22px;position:relative;z-index:1}
+.testimonial-block cite{font-style:normal;font-size:.82rem;color:rgba(255,255,255,.55);font-family:var(--f-mono);letter-spacing:.06em}
+.testimonial-block cite strong{display:block;color:rgba(255,255,255,.85);font-size:.88rem;margin-bottom:2px;font-family:var(--f-body);font-weight:600;letter-spacing:0}
+.final-cta{background:var(--cream-dark);padding:88px 5%;text-align:center}
+.final-cta .section-title{margin:0 auto 12px;text-align:center}
+.final-cta .section-sub{margin:0 auto 36px;text-align:center}
+.cta-btn{display:inline-block;background:var(--pine);color:var(--white);text-decoration:none;border:none;border-radius:6px;padding:16px 36px;font-family:var(--f-body);font-weight:600;font-size:1rem;cursor:pointer;transition:background .15s}
+.cta-btn:hover{background:var(--pine-mid)}
+.cta-sub{margin-top:14px;font-size:.75rem;color:var(--muted);font-family:var(--f-mono);letter-spacing:.06em}
+footer{background:var(--ink);padding:36px 5%}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-brand{font-family:var(--f-display);font-weight:700;font-size:1rem;color:var(--white)}
+.footer-brand span{display:block;font-family:var(--f-mono);font-size:.58rem;color:rgba(255,255,255,.35);letter-spacing:.14em;text-transform:uppercase;margin-top:2px;font-weight:400}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:none;font-family:var(--f-mono);letter-spacing:.06em;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.75)}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);font-family:var(--f-mono);letter-spacing:.04em}
+#get-offer{scroll-margin-top:80px}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Summit Path Home Buyers<span>Northern Colorado · Est. 2026</span></div>
+  <div class="nav-right">
+    <a href="tel:+19705550100" class="nav-phone">(970) 555-0100</a>
+    <a href="#get-offer" class="nav-cta">Get Cash Offer</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">Northern Colorado Cash Home Buyers</div>
+      <h1>We buy your house.<br><em>You pick the date.</em></h1>
+      <p class="hero-sub">No repairs. No showings. No agent fees. We make a fair cash offer on your Northern Colorado home within 24 hours — and close on your timeline.</p>
+      <div class="hero-trust">
+        <div class="trust-pill"><span class="check">✓</span> Close in 7–21 days</div>
+        <div class="trust-pill"><span class="check">✓</span> Any condition</div>
+        <div class="trust-pill"><span class="check">✓</span> Zero commissions</div>
+        <div class="trust-pill"><span class="check">✓</span> No obligation offer</div>
+      </div>
+    </div>
+    <div class="hero-form-card" id="get-offer">
+      <div class="hfc-header"><p>Get Your Free Cash Offer</p><span>Takes about 90 seconds · No obligation</span></div>
+      <div class="hfc-body" id="hfc-body">
+        <div class="hfc-progress">
+          <div class="hfc-dot active" id="dot-1"></div>
+          <div class="hfc-dot" id="dot-2"></div>
+          <div class="hfc-dot" id="dot-3"></div>
+        </div>
+        <div class="hfc-step active" id="hfc-1">
+          <div class="f-group"><label class="f-label">Property address *</label><input class="f-input" type="text" id="h-address" placeholder="123 Main St, Greeley, CO"></div>
+          <div class="f-group">
+            <label class="f-label">Property condition</label>
+            <div class="f-opts">
+              <label class="f-opt" onclick="pick(this,'hcond')"><input type="radio" name="hcond" value="needs-work"><span class="f-opt-icon">🔨</span><span class="f-opt-label">Needs Work</span></label>
+              <label class="f-opt" onclick="pick(this,'hcond')"><input type="radio" name="hcond" value="fair"><span class="f-opt-icon">🏠</span><span class="f-opt-label">Fair</span></label>
+              <label class="f-opt" onclick="pick(this,'hcond')"><input type="radio" name="hcond" value="good"><span class="f-opt-icon">✨</span><span class="f-opt-label">Good</span></label>
+              <label class="f-opt" onclick="pick(this,'hcond')"><input type="radio" name="hcond" value="great"><span class="f-opt-icon">⭐</span><span class="f-opt-label">Move-in Ready</span></label>
+            </div>
+          </div>
+          <button class="btn-next-hfc" onclick="hStep(2)">Next: Your Situation →</button>
+        </div>
+        <div class="hfc-step" id="hfc-2">
+          <div class="f-group">
+            <label class="f-label">Why are you selling?</label>
+            <div class="f-opts">
+              <label class="f-opt" onclick="pick(this,'hreason')"><input type="radio" name="hreason" value="foreclosure"><span class="f-opt-icon">⏰</span><span class="f-opt-label">Foreclosure</span></label>
+              <label class="f-opt" onclick="pick(this,'hreason')"><input type="radio" name="hreason" value="inherited"><span class="f-opt-icon">🏛️</span><span class="f-opt-label">Inherited</span></label>
+              <label class="f-opt" onclick="pick(this,'hreason')"><input type="radio" name="hreason" value="divorce"><span class="f-opt-icon">📋</span><span class="f-opt-label">Divorce</span></label>
+              <label class="f-opt" onclick="pick(this,'hreason')"><input type="radio" name="hreason" value="other"><span class="f-opt-icon">💬</span><span class="f-opt-label">Other</span></label>
+            </div>
+          </div>
+          <div class="f-group"><label class="f-label">How soon do you need to sell?</label><select class="f-input" id="h-timeline"><option value="asap">As soon as possible</option><option value="1-3mo">Within 1-3 months</option><option value="flexible">I'm flexible</option></select></div>
+          <button class="btn-next-hfc" onclick="hStep(3)">Next: Your Contact →</button>
+          <button class="btn-back-hfc" onclick="hStep(1)">← Back</button>
+        </div>
+        <div class="hfc-step" id="hfc-3">
+          <div class="f-row">
+            <div class="f-group"><label class="f-label">First name *</label><input class="f-input" type="text" id="h-first" placeholder="John"></div>
+            <div class="f-group"><label class="f-label">Last name *</label><input class="f-input" type="text" id="h-last" placeholder="Smith"></div>
+          </div>
+          <div class="f-group"><label class="f-label">Phone number *</label><input class="f-input" type="tel" id="h-phone" placeholder="(970) 555-0100"></div>
+          <div class="f-group"><label class="f-label">Email (optional)</label><input class="f-input" type="email" id="h-email" placeholder="john@email.com"></div>
+          <button class="btn-next-hfc" onclick="hSubmit()">Get My Cash Offer →</button>
+          <button class="btn-back-hfc" onclick="hStep(2)">← Back</button>
+        </div>
+      </div>
+      <div class="hfc-success" id="hfc-success">
+        <div class="s-icon">✅</div>
+        <h3>We'll be in touch within 24 hours</h3>
+        <p>Our team is reviewing your property now. Expect a call or text from us shortly with a fair cash offer — no pressure, no obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-stat"><div class="p-num">24hr</div><div class="p-label">Cash offer</div></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><div class="p-num">7–21</div><div class="p-label">Days to close</div></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><div class="p-num">$0</div><div class="p-label">Fees or commissions</div></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><div class="p-num">Any</div><div class="p-label">Condition accepted</div></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><div class="p-num">NoCo</div><div class="p-label">Local &amp; trusted</div></div>
+  </div>
+</div>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Process</div>
+    <h2 class="section-title">Three steps from today to closed</h2>
+    <p class="section-sub">We've made selling your home as straightforward as possible. No surprises, no runaround.</p>
+    <div class="steps">
+      <div class="step-card"><div class="step-num">1</div><h3>Tell us about your home</h3><p>Fill out our short form or give us a call. We'll ask a few questions about your property and situation — takes about 90 seconds.</p><span class="step-tag">No obligation</span></div>
+      <div class="step-card"><div class="step-num">2</div><h3>Receive your cash offer</h3><p>We review your home and send a fair, no-pressure cash offer within 24 hours. No repairs needed, no cleaning, no showings.</p><span class="step-tag">Within 24 hours</span></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Close on your schedule</h3><p>You pick the closing date. We handle all paperwork through a local title company. Cash in your account in as little as 7 days.</p><span class="step-tag">You choose the date</span></div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-eyebrow">Why Summit Path</div>
+    <h2 class="section-title">We're your neighbors, not a call center</h2>
+    <p class="section-sub">We're a local Northern Colorado company. When you call us, you talk to someone who knows Greeley, knows Fort Collins, and knows what your home is actually worth.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🏔️</div><h3>Locally owned &amp; operated</h3><p>We're based right here in Northern Colorado — not a national franchise or out-of-state hedge fund. We know your neighborhood.</p></div>
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Fast, certain closings</h3><p>No waiting on bank approvals, no deals falling through at the last minute. Cash means certainty. When we make an offer, we close.</p></div>
+      <div class="why-card"><div class="why-icon">🔑</div><h3>As-is — no repairs needed</h3><p>Don't spend a dollar fixing up your home before you sell. We buy houses in any condition, exactly as they are today.</p></div>
+      <div class="why-card"><div class="why-icon">💰</div><h3>Zero fees or commissions</h3><p>Traditional agents take 5–6% off your sale price. We charge nothing. The offer we make is the amount you receive.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-eyebrow">We Can Help With</div>
+    <h2 class="section-title">Whatever your situation, we have a solution</h2>
+    <p class="section-sub">We work with homeowners in all kinds of circumstances. There's no situation too complicated.</p>
+    <div class="situations">
+      <span class="sit-tag">⏰ Facing foreclosure</span>
+      <span class="sit-tag">🏛️ Inherited property</span>
+      <span class="sit-tag">📋 Going through divorce</span>
+      <span class="sit-tag">📦 Relocating quickly</span>
+      <span class="sit-tag">🔑 Tired of being a landlord</span>
+      <span class="sit-tag">💸 Behind on payments</span>
+      <span class="sit-tag">🏚️ Major repairs needed</span>
+      <span class="sit-tag">📉 Underwater on mortgage</span>
+      <span class="sit-tag">👴 Downsizing</span>
+      <span class="sit-tag">🧾 Tax liens</span>
+      <span class="sit-tag">🔨 Fixer-upper</span>
+      <span class="sit-tag">💼 Job loss or hardship</span>
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="testimonial-block">
+      <blockquote>"I was two months behind on my mortgage and didn't know what to do. Summit Path called me back the same day, made me a fair offer, and we closed in 11 days. I didn't have to fix a single thing. I wish I had called sooner."</blockquote>
+      <cite><strong>Maria T.</strong>Greeley, CO · Sold her home in 11 days</cite>
+    </div>
+  </div>
+</section>
+<div class="final-cta">
+  <div class="section-eyebrow" style="text-align:center">Ready to get started?</div>
+  <h2 class="section-title">Get a free cash offer today</h2>
+  <p class="section-sub">No repairs. No fees. No pressure. Just a fair offer from a local company that actually picks up the phone.</p>
+  <a href="#get-offer" class="cta-btn">Get My Cash Offer →</a>
+  <div class="cta-sub">Or call us directly · (970) 555-0100</div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Summit Path Home Buyers LLC<span>Fort Collins · Greeley · Loveland · Windsor</span></div>
+    <div class="footer-links">
+      <a href="#get-offer">Get an Offer</a>
+      <a href="#0">How It Works</a>
+      <a href="tel:+19705550100">(970) 555-0100</a>
+    </div>
+    <div class="footer-copy">© 2026 Summit Path Home Buyers LLC</div>
+  </div>
+</footer>
+<script>
+function hStep(n){
+  document.querySelectorAll('.hfc-step').forEach(s=>s.classList.remove('active'));
+  document.getElementById('hfc-'+n).classList.add('active');
+  [1,2,3].forEach(i=>{
+    const dot=document.getElementById('dot-'+i);
+    dot.classList.remove('active','done');
+    if(i<n)dot.classList.add('done');
+    else if(i===n)dot.classList.add('active');
+  });
+  if(n>1)document.getElementById('get-offer').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function pick(el,name){
+  document.querySelectorAll('input[name="'+name+'"]').forEach(r=>r.closest('.f-opt').classList.remove('sel'));
+  el.classList.add('sel');
+}
+function hSubmit(){
+  const first=document.getElementById('h-first').value.trim();
+  const last=document.getElementById('h-last').value.trim();
+  const phone=document.getElementById('h-phone').value.trim();
+  if(!first||!last||!phone){alert('Please enter your name and phone number so we can reach you.');return;}
+  const lead={
+    timestamp:new Date().toISOString(),
+    address:document.getElementById('h-address').value,
+    condition:document.querySelector('input[name="hcond"]:checked')?.value,
+    reason:document.querySelector('input[name="hreason"]:checked')?.value,
+    timeline:document.getElementById('h-timeline').value,
+    first,last,phone,
+    email:document.getElementById('h-email').value
+  };
+  console.log('Lead captured:',JSON.stringify(lead,null,2));
+  document.getElementById('hfc-body').style.display='none';
+  document.getElementById('hfc-success').style.display='block';
+}
+</script>
+</body>
+</html>
