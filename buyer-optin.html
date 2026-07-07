@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Off-Market Deals in Northern Colorado — Summit Path Home Buyers</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pine:#1e4d35;--pine-light:#2a6647;--pine-dim:rgba(30,77,53,0.10);
+  --gold:#c8933a;--paper:#f5f2eb;--ink:#0f1a14;--rule:#d4d0c7;
+  --display:'Syne',sans-serif;--body:'Inter',sans-serif;
+}
+body{background:var(--ink);color:#fff;font-family:var(--body);min-height:100vh;display:flex;flex-direction:column}
+
+/* HERO */
+.hero{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(30,77,53,0.35) 0%,transparent 65%),radial-gradient(ellipse at 20% 80%,rgba(200,147,58,0.12) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:620px;width:100%;text-align:center;position:relative;z-index:1}
+.badge{display:inline-block;background:var(--pine-dim);border:1px solid rgba(30,77,53,0.4);color:#6dbf8f;font-family:var(--display);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:24px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+h1 span{color:var(--gold)}
+.subhead{font-size:1.05rem;line-height:1.6;color:rgba(255,255,255,.65);max-width:480px;margin:0 auto 36px}
+.features{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
+.feat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 14px;font-size:.78rem;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:7px}
+.feat-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* FORM CARD */
+.form-card{background:#fff;border-radius:12px;padding:32px;max-width:480px;margin:0 auto;color:var(--ink);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.form-title{font-family:var(--display);font-weight:700;font-size:1.1rem;margin-bottom:6px;color:var(--ink)}
+.form-sub{font-size:.82rem;color:#777;margin-bottom:22px;line-height:1.5}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.75rem;font-weight:500;color:#555;margin-bottom:5px}
+.field input,.field select{width:100%;border:1.5px solid var(--rule);border-radius:6px;padding:11px 14px;font-family:var(--body);font-size:.9rem;color:var(--ink);outline:none;background:#fff;transition:border-color .15s;appearance:none}
+.field input:focus,.field select:focus{border-color:var(--pine)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.checkbox-group{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.checkbox-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:#444;cursor:pointer}
+.checkbox-item input[type=checkbox]{width:16px;height:16px;accent-color:var(--pine);cursor:pointer}
+.btn-submit{width:100%;background:var(--pine);color:#fff;border:none;border-radius:7px;padding:14px;font-family:var(--display);font-weight:700;font-size:.95rem;cursor:pointer;transition:background .15s;margin-top:18px;letter-spacing:.02em}
+.btn-submit:hover{background:var(--pine-light)}
+.form-fine{font-size:.7rem;color:#aaa;text-align:center;margin-top:12px;line-height:1.5}
+.section-label{font-family:var(--display);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:10px;margin-top:18px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+
+/* SUCCESS STATE */
+.success-state{display:none;text-align:center;padding:20px 0}
+.success-icon{font-size:2.5rem;margin-bottom:12px}
+.success-title{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--pine);margin-bottom:8px}
+.success-msg{font-size:.85rem;color:#666;line-height:1.6}
+
+/* SOCIAL PROOF */
+.proof{background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.08);padding:32px 24px;text-align:center}
+.proof-inner{max-width:620px;margin:0 auto}
+.proof-label{font-family:var(--display);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:20px}
+.proof-items{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+.proof-item{text-align:center}
+.proof-val{font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--gold)}
+.proof-desc{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:3px;text-transform:uppercase;letter-spacing:.06em}
+
+/* FOOTER */
+footer{background:rgba(0,0,0,.3);padding:16px 24px;text-align:center;font-size:.72rem;color:rgba(255,255,255,.25)}
+footer a{color:rgba(255,255,255,.3);text-decoration:none}
+
+@media(max-width:520px){.form-card{padding:24px 18px}.hero{padding:40px 16px 28px}.field-row,.field-row3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="badge">Northern Colorado · Cash Buyers Only</div>
+    <h1>Get <span>Off-Market Deals</span><br>Before They Hit the MLS</h1>
+    <p class="subhead">Join Summit Path's private buyer list and be the first to see discounted properties in Greeley, Fort Collins, Loveland, Windsor, and surrounding Weld County.</p>
+    <div class="features">
+      <div class="feat"><div class="feat-dot"></div>Below-market pricing</div>
+      <div class="feat"><div class="feat-dot"></div>Weld County focus</div>
+      <div class="feat"><div class="feat-dot"></div>Fix &amp; flip + BRRRR deals</div>
+      <div class="feat"><div class="feat-dot"></div>Fast closings</div>
+      <div class="feat"><div class="feat-dot"></div>No MLS competition</div>
+    </div>
+
+    <div class="form-card">
+      <div id="form-wrapper">
+        <div class="form-title">Join the Buyer List</div>
+        <div class="form-sub">Tell us your criteria and we'll only reach out when we have a deal that fits.</div>
+
+        <form id="buyer-form" action="https://formspree.io/f/xeoqgwvk" method="POST">
+          <input type="hidden" name="_subject" value="New Buyer List Signup — Summit Path">
+          <input type="hidden" name="form_type" value="buyer_optin">
+
+          <div class="section-label">Your Info</div>
+          <div class="field-row">
+            <div class="field"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required></div>
+            <div class="field"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Email *</label><input type="email" name="email" placeholder="john@email.com" required></div>
+            <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="(970) 555-0100"></div>
+          </div>
+
+          <div class="section-label">Your Buy Box</div>
+          <div class="field">
+            <label>Markets You're Buying In</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" name="market_greeley" value="Greeley/Weld County"> Greeley / Weld County</label>
+              <label class="checkbox-item"><input type="checkbox" name="market_fortcollins" value="Fort Collins"> Fort Collins</label>
+              <label class="checkbox-item"><input type="checkbox" name="market_loveland" value="Loveland/Windsor"> Loveland / Windsor</label>
+              <label class="checkbox-item"><input type="checkbox" name="market_longmont" value="Longmont"> Longmont</label>
+              <label class="checkbox-item"><input type="checkbox" name="market_other" value="Other NoCo"> Other NoCo areas</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Investment Strategy</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" name="strat_flip" value="Fix &amp; Flip"> Fix &amp; Flip</label>
+              <label class="checkbox-item"><input type="checkbox" name="strat_brrrr" value="BRRRR"> BRRRR</label>
+              <label class="checkbox-item"><input type="checkbox" name="strat_buyhold" value="Buy &amp; Hold"> Buy &amp; Hold / Rental</label>
+              <label class="checkbox-item"><input type="checkbox" name="strat_subto" value="Subject-To / Creative Finance"> Subject-To / Creative Finance</label>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Min ARV ($)</label>
+              <select name="arv_min">
+                <option value="">No min</option>
+                <option value="100000">$100k</option>
+                <option value="150000">$150k</option>
+                <option value="200000">$200k</option>
+                <option value="250000">$250k</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Max ARV ($)</label>
+              <select name="arv_max">
+                <option value="">No max</option>
+                <option value="250000">$250k</option>
+                <option value="350000">$350k</option>
+                <option value="450000">$450k</option>
+                <option value="600000">$600k+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>How fast can you close?</label>
+            <select name="close_speed">
+              <option value="">— Select —</option>
+              <option value="7-14 days">7–14 days (cash)</option>
+              <option value="14-21 days">14–21 days</option>
+              <option value="21-30 days">21–30 days</option>
+              <option value="30+ days">30+ days / need financing</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Add Me to the List →</button>
+          <p class="form-fine">No spam. We only email when we have a deal that matches your criteria. Unsubscribe anytime.</p>
+        </form>
+      </div>
+
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✅</div>
+        <div class="success-title">You're on the list.</div>
+        <div class="success-msg">We'll reach out when we have a deal that fits your criteria in Northern Colorado. Keep an eye on your inbox — deals go fast.<br><br>Questions? Call or text Tanner at <strong>(970) 578-0202</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-label">Why Summit Path</div>
+    <div class="proof-items">
+      <div class="proof-item"><div class="proof-val">NoCo</div><div class="proof-desc">Greeley & Weld County Focus</div></div>
+      <div class="proof-item"><div class="proof-val">Off-Market</div><div class="proof-desc">No MLS Competition</div></div>
+      <div class="proof-item"><div class="proof-val">Fast</div><div class="proof-desc">Close in 7–21 Days</div></div>
+      <div class="proof-item"><div class="proof-val">Direct</div><div class="proof-desc">Straight from the Source</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Summit Path Home Buyers · Greeley, CO · (970) 578-0202 · <a href="mailto:summitpathhomebuyers@gmail.com">summitpathhomebuyers@gmail.com</a><br>
+  We are not licensed real estate agents. We buy and assign real estate contracts.
+</footer>
+
+<script>
+const form = document.getElementById('buyer-form');
+const formWrapper = document.getElementById('form-wrapper');
+const successState = document.getElementById('success-state');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+
+  try {
+    const data = new FormData(form);
+    // Collect checkbox arrays into readable strings
+    const markets = [];
+    const strats = [];
+    data.forEach((val, key) => {
+      if (key.startsWith('market_')) markets.push(val);
+      if (key.startsWith('strat_')) strats.push(val);
+    });
+    data.append('markets', markets.join(', ') || 'Not specified');
+    data.append('strategies', strats.join(', ') || 'Not specified');
+
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      formWrapper.style.display = 'none';
+      successState.style.display = 'block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(err) {
+    btn.textContent = 'Add Me to the List →';
+    btn.disabled = false;
+    alert('Something went wrong. Please call or text (970) 578-0202 to be added manually.');
+  }
+});
+</script>
+</body>
+</html>
