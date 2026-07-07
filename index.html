@@ -114,6 +114,19 @@ footer{background:var(--ink);padding:36px 5%}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap}
 .footer-links a{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:none;font-family:var(--f-mono);letter-spacing:.06em;transition:color .15s}
 .footer-links a:hover{color:rgba(255,255,255,.75)}
+.buyer-banner{background:var(--ink);border-top:1px solid rgba(255,255,255,.07);padding:64px 5%}
+.buyer-banner-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:760px){.buyer-banner-inner{grid-template-columns:1fr;gap:32px}}
+.buyer-badge{display:inline-block;background:rgba(200,147,58,.12);border:1px solid rgba(200,147,58,.3);color:var(--gold);font-family:var(--f-mono);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.buyer-banner h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--white);line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.buyer-banner p{font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.7;font-weight:300;margin-bottom:0}
+.buyer-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:32px}
+.buyer-features{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.buyer-feat{display:flex;align-items:flex-start;gap:12px;font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.5}
+.buyer-feat-icon{width:22px;height:22px;border-radius:50%;background:rgba(30,77,53,.5);border:1px solid rgba(30,77,53,.8);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;margin-top:1px}
+.btn-buyer{display:block;background:var(--gold);color:var(--white);text-decoration:none;border-radius:6px;padding:14px 24px;font-family:var(--f-body);font-weight:600;font-size:.92rem;text-align:center;transition:background .15s}
+.btn-buyer:hover{background:var(--gold-light)}
+.btn-buyer-sub{text-align:center;margin-top:10px;font-size:.72rem;color:rgba(255,255,255,.3);font-family:var(--f-mono);letter-spacing:.06em}
 .footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);font-family:var(--f-mono);letter-spacing:.04em}
 #get-offer{scroll-margin-top:80px}
 </style>
@@ -123,6 +136,7 @@ footer{background:var(--ink);padding:36px 5%}
   <div class="nav-logo">Summit Path Home Buyers<span>Northern Colorado · Est. 2026</span></div>
   <div class="nav-right">
     <a href="tel:+19705780202" class="nav-phone">(970) 578-0202</a>
+    <a href="buyer-optin.html" class="nav-cta" style="background:transparent;border:1px solid rgba(255,255,255,.25);margin-right:6px">Investors</a>
     <a href="#get-offer" class="nav-cta">Get Cash Offer</a>
   </div>
 </nav>
@@ -253,6 +267,25 @@ footer{background:var(--ink);padding:36px 5%}
   </div>
 </section>
 
+<div class="buyer-banner" id="investors">
+  <div class="buyer-banner-inner">
+    <div>
+      <div class="buyer-badge">For Real Estate Investors</div>
+      <h2>Get off-market deals<br>before they hit the MLS</h2>
+      <p>We source discounted properties in Greeley, Fort Collins, Loveland, and Windsor. Join our private buyer list and we'll match deals to your exact criteria — fix &amp; flip, BRRRR, buy &amp; hold, or subject-to.</p>
+    </div>
+    <div class="buyer-card">
+      <div class="buyer-features">
+        <div class="buyer-feat"><div class="buyer-feat-icon">✓</div>Below-market Weld County &amp; NoCo deals</div>
+        <div class="buyer-feat"><div class="buyer-feat-icon">✓</div>Matched to your buy box — no junk deals</div>
+        <div class="buyer-feat"><div class="buyer-feat-icon">✓</div>Fast closings, assignable contracts</div>
+        <div class="buyer-feat"><div class="buyer-feat-icon">✓</div>Free to join — no fees ever</div>
+      </div>
+      <a href="buyer-optin.html" class="btn-buyer">Join the Buyer List →</a>
+      <p class="btn-buyer-sub">Free · No obligation · NoCo investors only</p>
+    </div>
+  </div>
+</div>
 <div class="final-cta">
   <div class="section-eyebrow" style="text-align:center">Ready to get started?</div>
   <h2 class="section-title">Get a free cash offer today</h2>
@@ -266,6 +299,7 @@ footer{background:var(--ink);padding:36px 5%}
     <div class="footer-links">
       <a href="#get-offer">Get an Offer</a>
       <a href="#0">How It Works</a>
+      <a href="buyer-optin.html">Investors</a>
       <a href="tel:+19705780202">(970) 578-0202</a>
     </div>
     <div class="footer-copy">© 2026 Summit Path Home Buyers</div>
